@@ -29,7 +29,13 @@ if(HELLOWORLD_WITH_TESTS)
  add_subdirectory(tests)
 endif()
 
-
+# create the package configuration file
+include(CMakePackageConfigHelpers)
+configure_package_config_file(
+cmake/HelloProjConfig.cmake.in
+HelloProjConfig.cmake
+INSTALL_DESTINATION cmake/
+)
 
 # add binary tree to the list of paths to search includes
 target_include_directories(HelloWorld
