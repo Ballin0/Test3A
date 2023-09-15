@@ -21,6 +21,15 @@ if(HELLOWORLD_WITH_EXECUTABLES)
  add_subdirectory(mains)
 endif()
 
+#add tests
+option(HELLOWORLD_WITH_TESTS "Compile tests" ON)
+if(HELLOWORLD_WITH_TESTS)
+ enable_testing()
+ message(STATUS "Configuring Hello World with tests")
+ add_subdirectory(tests)
+endif()
+
+
 
 # add binary tree to the list of paths to search includes
 target_include_directories(HelloWorld
